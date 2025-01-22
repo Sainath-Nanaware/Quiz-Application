@@ -1,10 +1,19 @@
+import { Route, Routes } from "react-router-dom"
+import Home from "./pages/Home"
+import PageNotFound from "./pages/PageNotFound"
+import QuizePage from "./pages/QuizePage"
 
 
 function App() {
 
   return (
     <>
-    <h1>Welcome Project</h1>
+    <Routes>
+      <Route path="/" element={<Home/>}/>
+      <Route path="/quizPage/:quizId" element={<QuizePage/>}/>
+      <Route path="*" element={<PageNotFound/>}/>
+
+    </Routes>
     </>
   )
 }
