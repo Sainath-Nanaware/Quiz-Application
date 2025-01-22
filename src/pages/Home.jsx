@@ -2,6 +2,7 @@ import React, { useReducer } from 'react'
 import { useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
 import  dashboardImage from '../../public/images/quize-poster.jpg'
+import gk from '../../public/images/gk.jpg'
 
 
 function Home() {

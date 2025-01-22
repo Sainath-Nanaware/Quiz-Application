@@ -1,10 +1,10 @@
-
+import gk from '../../public/images/gk.jpg'
 export const quizes = [
   {
     quizId: "abcd",
     title: "General Knowledge Quiz",
     description: "A basic quiz to test your general knowledge.",
-    image: "../../public/images/gk.jpg",
+    image: {gk},
     category: "General Knowledge",
     language: "en",
     tags: ["geography", "history", "science"],
