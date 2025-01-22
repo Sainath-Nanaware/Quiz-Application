@@ -8,8 +8,8 @@ function Home() {
     const {quizes}=useSelector((state=>state.quiz)) 
     return (
       <>
-    <div className=' flex flex-col justify-center items-center p-[10px]'>
-      <img src={dashboardImage} alt="dashboard image"  className=' h-[60vh] pl-[60px] '/>
+    <div className=' flex flex-col justify-center items-center p-[10px] '>
+      <img src={dashboardImage} alt="dashboard image"  className=' h-[60vh] pl-[70px] '/>
     </div>
     <div className=' flex justify-center p-[10px]'>
       <p className=' text-[42px] font-semibold '>"Every quiz is a step closer to brilliance"</p>

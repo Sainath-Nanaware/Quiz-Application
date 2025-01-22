@@ -1,6 +1,6 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
-import { useParams } from 'react-router-dom'
+import { useNavigate, useParams } from 'react-router-dom'
 import QuationCard from '../component/QuationCard'
 import { Button } from '@mui/material'
 
@@ -13,10 +13,11 @@ function QuizePage() {
                 return element.quizId===quizId
             })
     console.log(quiz);
+    const navigate=useNavigate()
     
     return (
     <div>
-        {/* <p>{quizId}</p> */}
+        {/* quize Title */}
         <div className='h-[11vh] flex justify-center items-center bg-[#444645]'>
             <p className='text-[24px] font-semibold bg-[#FAA91C] p-[9px] px-[24px] rounded-md'>{quiz.title}</p>
         </div>
@@ -28,7 +29,7 @@ function QuizePage() {
         </div>
         {/* meterial ui button */}
         <div className=' h-[12vh] flex justify-center items-center'>
-          <Button variant="contained" color="success">Submit</Button>
+          <Button variant="contained" color="success" onClick={()=>{navigate(`/quizeResult/${quizId}`)}}>Submit</Button>
         </div>
     </div>
   )
