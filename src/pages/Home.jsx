@@ -20,7 +20,7 @@ function Home() {
             return <Link key={element.quizId} 
                     to={`/quizPage/${element.quizId}`}
                     className='border-4 border-[#FAA91C] bg-[#FAA91C]  drop-shadow-xl rounded-[8px] h-[50vh] w-[18vw] flex flex-col  gap-2 justify-center items-center'>
-                          <img src={element.image} alt="gk" className=' h-[30vh] w-[15vw] rounded-[8px]'/>
+                          <img src={gk} alt="gk" className=' h-[30vh] w-[15vw] rounded-[8px]'/>
                           <p className='font-semibold text-[20px]'>{element.title}</p>
                           <p className='text-[#444645] text-center'>{element.description}</p>             
                   </Link>
