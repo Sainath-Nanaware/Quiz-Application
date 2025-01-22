@@ -2,6 +2,7 @@ import React from 'react'
 import { useSelector } from 'react-redux'
 import { useParams } from 'react-router-dom'
 import QuationCard from '../component/QuationCard'
+import { Button } from '@mui/material'
 
 function QuizePage() {
     const {quizId}=useParams()
@@ -24,6 +25,10 @@ function QuizePage() {
             {quiz.questions.map((element,index)=>{
                 return <QuationCard key={element.questionId} quationTitle={element.question} options={element.options} quationNo={index+1} questionId={element.questionId}/>
             })}
+        </div>
+        {/* meterial ui button */}
+        <div className=' h-[12vh] flex justify-center items-center'>
+          <Button variant="contained" color="success">Submit</Button>
         </div>
     </div>
   )
