@@ -13,15 +13,23 @@ function QuizeResult() {
 
     
     const {selectOptions}=useSelector((state=>state.selectOption));
-    const totalPoint=quiz.questions.length*2
-    let userPoints=0
-    // console.log(quiz.questions)
-    // console.log("option selected",selectOptions)
-    // quiz.quations.forEach((quiz)=>{
-    //         selectOptions.forEach((userOption)=>{
-    //             if(quiz.questionId===userOption.questionId && quizes.correctAnswer )
-        
-    // });
+    const eachQuationMarks=2
+    const totalPoint=quiz.questions.length*eachQuationMarks
+    console.log("quize quations:",quiz.questions)
+    console.log("option selected:",selectOptions)
+    var correctQuations=[]
+    for(let i=0;i<quiz.questions.length;i++){
+      selectOptions.filter((element)=>{
+        if(element.quationId===quiz.questions[i].questionId && element.optionId===quiz.questions[i].correctAnswer){
+          correctQuations.push(element)
+        }else{
+          return true;
+        }
+      })
+      // console.log(quiz.questions[i].questionId)
+    }
+    let userMarks=correctQuations.length*eachQuationMarks
+    console.log("correct quation array",correctQuations)
     
   return (
     <div>
@@ -35,7 +43,7 @@ function QuizeResult() {
             <p className='text-[40px]'>{quiz.title}</p>
             <div className='flex  gap-[24px]'>
                 <div className='flex flex-col justify-center items-center border-2 border-solid border-green-500 w-[15vw] p-[20px] rounded-xl'>
-                    <p className='text-[80px] font-semibold'>00</p>
+                    <p className='text-[80px] font-semibold'>{userMarks}</p>
                     <p className='text-[20px]  '>Your Points</p>
                 </div>
                 <div className='flex flex-col justify-center items-center border-2 border-solid border-[#c7490a] w-[15vw] p-[20px] rounded-xl'>
