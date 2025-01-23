@@ -9,6 +9,9 @@ function Home() {
     const {quizes}=useSelector((state=>state.quiz)) 
     return (
       <>
+      <header className='h-[9vh] bg-[#444645] px-[74px] flex justify-start items-center z-10 sticky top-0'>
+          <p className='text-[#FAA91C] text-[22px] font-bold'>QuizApp</p>
+      </header>
     <div className=' flex flex-col justify-center items-center p-[10px] '>
       <img src={dashboardImage} alt="dashboard image"  className=' h-[60vh] pl-[70px] '/>
     </div>
@@ -20,7 +23,7 @@ function Home() {
             return <Link key={element.quizId} 
                     to={`/quizPage/${element.quizId}`}
                     className='border-4 border-[#FAA91C] bg-[#FAA91C]  drop-shadow-xl rounded-[8px] h-[50vh] w-[18vw] flex flex-col  gap-2 justify-center items-center'>
-                          <img src={gk} alt="gk" className=' h-[30vh] w-[15vw] rounded-[8px]'/>
+                          <img src={element.image} alt="gk" className=' h-[30vh] w-[15vw] rounded-[8px]'/>
                           <p className='font-semibold text-[20px]'>{element.title}</p>
                           <p className='text-[#444645] text-center'>{element.description}</p>             
                   </Link>

@@ -340,13 +340,14 @@ export const quizes = [
       },
     ],
   },
-
+  //----------------------------------------------------------------------
   {
     quizId: "efgh",
     title: "Science Quiz",
     description: "Test your knowledge on basic science concepts.",
     category: "Science",
-    image: "../../public/images/science.jpg",
+    image:
+      "https://img.freepik.com/free-vector/science-banner-with-doodle-icons_1308-132177.jpg?semt=ais_hybrid",
     language: "en",
     tags: ["physics", "biology", "chemistry"],
     questions: [
@@ -686,12 +687,14 @@ export const quizes = [
       },
     ],
   },
+  //--------------------------------------------------------------------------
   {
     quizId: "ijkl",
     title: "World History Quiz",
     description: "Test your knowledge of world history.",
     category: "History",
-    image: "../../public/images/history.jpg",
+    image:
+      "https://static.vecteezy.com/system/resources/previews/002/236/242/non_2x/history-minimal-thin-line-icons-set-vector.jpg",
     language: "en",
     tags: ["ancient", "medieval", "modern"],
     questions: [
@@ -1039,13 +1042,13 @@ export const quizes = [
       },
     ],
   },
-
+  //-----------------------------------------------------------------------------
   {
     quizId: "mnop",
     title: "Geography Quiz",
     description: "How well do you know the world’s geography?",
     category: "Geography",
-    image: "../../public/images/geography.jpg",
+    image: "https://img.cdn.schooljotter2.com/sampled/19153022/900/0/nocrop//",
     language: "en",
     tags: ["countries", "capitals", "landmarks"],
     questions: [
@@ -1335,13 +1338,14 @@ export const quizes = [
       },
     ],
   },
-
+  //----------------------------------------------------------------------------------
   {
     quizId: "uvwx",
     title: "Music Quiz",
     description: "Test your knowledge about famous musicians and songs.",
     category: "Music",
-    image: "../../public/images/music.jpg",
+    image:
+      "https://img.freepik.com/premium-vector/music-notes-clip-art-vector-design-with-white-background_579306-9765.jpg",
     language: "en",
     tags: ["artists", "albums", "songs"],
     questions: [
@@ -1565,13 +1569,15 @@ export const quizes = [
       },
     ],
   },
+  //------------------------------------------------------------------------------
   {
     quizId: "yzab",
     title: "Literature Quiz",
     description:
       "Test your knowledge on famous authors and works of literature.",
     category: "Literature",
-    image: "../../public/images/litrature.jpg",
+    image:
+      "https://i.pinimg.com/736x/b0/52/6d/b0526d8ca7d5b6202bc0b22481258421.jpg",
     language: "en",
     tags: ["authors", "novels", "poetry"],
     questions: [
