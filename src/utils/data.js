@@ -4,7 +4,8 @@ export const quizes = [
     quizId: "abcd",
     title: "General Knowledge Quiz",
     description: "A basic quiz to test your general knowledge.",
-    image: "../../public/images/gk.jpg",
+    image:
+      "https://img.freepik.com/premium-vector/man-silhouette-mental-health-creative-process_24640-20813.jpg",
     category: "General Knowledge",
     language: "en",
     tags: ["geography", "history", "science"],
