@@ -4,6 +4,7 @@ import PageNotFound from "./pages/PageNotFound"
 import QuizePage from "./pages/QuizePage"
 import QuationCard from "./component/QuationCard"
 import QuizeResult from "./pages/QuizeResult"
+import QuizeStartWindow from "./component/QuizeStartWindow"
 
 
 function App() {
@@ -16,6 +17,8 @@ function App() {
       <Route path="/quizeResult/:quizId" element={<QuizeResult/>}/>
       <Route path="*" element={<PageNotFound/>}/>
       <Route path="/qCard" element={<QuationCard/>}/>
+      <Route path="/qStart" element={<QuizeStartWindow/>}/>
+
     </Routes>
     </>
   )

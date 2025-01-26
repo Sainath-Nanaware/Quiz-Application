@@ -1,8 +1,9 @@
-import React from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import { useSelector } from 'react-redux'
 import { useNavigate, useParams } from 'react-router-dom'
 import QuationCard from '../component/QuationCard'
 import { Button } from '@mui/material'
+import QuizeStartWindow from '../component/QuizeStartWindow'
 
 function QuizePage() {
     const {quizId}=useParams()
@@ -14,8 +15,21 @@ function QuizePage() {
             })
     console.log(quiz);
     const navigate=useNavigate()
+
+    //show quize start window 
+    const [showStartWindow,setStartWindow]=useState(true)
+    useEffect(()=>{
+        //use to  show page at top opsition
+         window.scrollTo(0, 0);
+        if(showStartWindow){
+             document.body.style.overflow = 'hidden';
+        }else{
+             document.body.style.overflow = '';
+        }
+    },[showStartWindow])
     
     return (
+    <>
     <div>
         {/* quize Title */}
         <div className='h-[11vh] flex justify-center items-center bg-[#444645]'>
@@ -32,6 +46,9 @@ function QuizePage() {
           <Button variant="contained" color="success" onClick={()=>{navigate(`/quizeResult/${quizId}`)}}>Submit</Button>
         </div>
     </div>
+    {showStartWindow && <QuizeStartWindow hidePopup={setStartWindow} totalQuations={quiz.questions.length} title={quiz.title} desc={quiz.description}/>}
+    
+    </>
   )
 }
 
