@@ -20,10 +20,13 @@ const selectOptionSlice=createSlice({
             }else{
                 state.selectOptions.push({ quationId, optionId });
             }
+        },
+        resetOptions:(state,actions)=>{
+            state.selectOptions=[]
         }
     }
 })
 
 
 export const selectOptionReducer=selectOptionSlice.reducer
-export const {addOptionObj} =selectOptionSlice.actions
+export const {addOptionObj,resetOptions} =selectOptionSlice.actions

@@ -1,12 +1,21 @@
 import { Button } from '@mui/material'
-import React from 'react'
-import { useSelector } from 'react-redux'
+import React, { useEffect } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
 import { useNavigate, useParams } from 'react-router-dom'
+import { setResult } from '../slices/quizResult'
+import { resetOptions } from '../slices/selectOptionSlice'
 
 function QuizeResult() {
+
+    useEffect(()=>{
+        dispatch(setResult(userMarks))//set result state
+    },[userMarks])
     const navigate=useNavigate()
     const {quizId}=useParams()
     const {quizes}=useSelector((state=>state.quiz))
+    //get result state from redux
+    const {result}=useSelector((state)=>state.quizeResult)
+    const dispatch=useDispatch()
 
     //get quize array according to quize ID
     const [quiz]=quizes.filter((element)=>{
@@ -33,9 +42,16 @@ function QuizeResult() {
       // console.log(quiz.questions[i].questionId)
     }
     //final result count according correct quation array length(correct quation count)
-    let userMarks=correctQuations.length*eachQuationMarks
+    var userMarks=correctQuations.length*eachQuationMarks
+    
     // console.log("correct quation array",correctQuations)
 
+    function handleOnClick(){
+        //cleare selected options and reult state
+          navigate('/') 
+          dispatch(setResult(0))
+          dispatch(resetOptions())
+    }
     
     
   return (
@@ -50,7 +66,7 @@ function QuizeResult() {
             <p className='text-[30px] font-semibold border-b-2 border-solid border-[#FAA91C]'>{quiz.title}</p>
             <div className='flex  gap-[24px]'>
                 <div className='flex flex-col justify-center items-center border-2   border-solid border-green-500 w-[15vw] p-[20px] rounded-xl'>
-                    <p className='text-[80px] font-semibold'>{userMarks}</p>
+                    <p className='text-[80px] font-semibold'>{result}</p>
                     <p className='text-[20px] '>Your Points</p>
                 </div>
                 <div className='flex flex-col justify-center items-center border-2 border-solid border-[#c7490a] w-[15vw] p-[20px] rounded-xl'>
@@ -58,7 +74,7 @@ function QuizeResult() {
                      <p className='text-[20px] '>Maximum Points</p>
                 </div>
             </div>
-            <Button variant="outlined" onClick={()=>{navigate('/')}}>Home</Button>
+            <Button variant="outlined" onClick={()=>{handleOnClick()}}>Home</Button>
         </div>
       </div>
     </div>
