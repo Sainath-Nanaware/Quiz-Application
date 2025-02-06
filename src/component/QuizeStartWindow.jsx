@@ -15,7 +15,7 @@ function QuizeStartWindow({hidePopup,totalQuations,title,desc}) {
             <div className=' flex flex-col justify-center items-start gap-[20px] p-[40px]'>
                 <p className='text-[18px] font-semibold'> &#10148; Number of questions:  {totalQuations}</p>
                 <p className='text-[18px] font-semibold'> &#10148; Number of points each question:  2</p>
-                <p className='text-[18px] font-semibold'> &#10148; Qize Duration:   00:00</p>
+                {/* <p className='text-[18px] font-semibold'> &#10148; Qize Duration:   00:00</p> */}
             </div>
             <div className='h-[10vh] flex justify-center items-center gap-[15vw]'>
                 <Button variant="contained" color="error" onClick={()=>{navigate('/');hidePopup(false)}}>Cancel</Button>
